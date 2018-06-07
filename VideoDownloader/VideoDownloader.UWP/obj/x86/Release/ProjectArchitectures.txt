@@ -1,0 +1,1 @@
+C:\Users\admin\source\repos\VideoDownloader\VideoDownloader\VideoDownloader.UWP\VideoDownloader.UWP.csproj;x86

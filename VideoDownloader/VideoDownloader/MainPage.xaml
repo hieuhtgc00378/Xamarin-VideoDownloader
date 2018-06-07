@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VideoDownloader"
+             x:Class="VideoDownloader.MainPage"
+            Padding="15"
+            >
+    <ContentPage Title="Instructions" x:Name="instruction">
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <Label Text="1. Normal Download:" Font="bold,24" TextColor="Black"></Label>
+                <Label Text="   Step 1: Copy and paste URL(or link) of the website that contains the videos you want to download from Browser"></Label>
+                <Label Text="   Step 2: Press Start Download button and the downloading progress will start automatically"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="2. Facebook Download:" Font="bold,24" TextColor="Black"></Label>
+                <Label Text="   Step 1: Login to your facebook account on Web browser"></Label>
+                <Label Text="   Step 2: Navigate to videos that you want to download"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Normal download" x:Name="normalDownload">
+        <StackLayout Orientation="Vertical">
+            <Entry x:Name="txtPageUrl" Placeholder="Enter website url"></Entry>
+            <Button x:Name="btnStartDownloadUrl" Text="Start Download" Clicked="OnBtnbtnStartDownloadUrlClicked"></Button>
+            <ScrollView x:Name="normalScrollView" HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="nrmStack1" Orientation="Vertical" HorizontalOptions="Fill">
+                    <Label x:Name="percent1" Text="0%" HorizontalOptions="Center"></Label>
+                    <ProgressBar x:Name="progressBar1" Progress="0" HorizontalOptions="Fill">
+
+                    </ProgressBar>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Facebook download" x:Name="facebookDownload">
+        <StackLayout Orientation="Vertical">
+            <Label Text="Paste Source of Facebook page here:" x:Name="lblheight"></Label>
+            <Editor x:Name="txtPageSource" HorizontalOptions="Fill" VerticalOptions="Fill" HeightRequest="250"></Editor>
+            <Button x:Name="btnStartDownloadSource" Text="Start Download" Clicked="OnBtnStartDownloadSourceClicked"></Button>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Downloaded list" x:Name="downloaded">
+        <ListView x:Name="downloadedListView" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>
